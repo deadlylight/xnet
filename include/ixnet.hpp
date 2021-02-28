@@ -5,7 +5,7 @@
 using namespace std;
 
 class ITcpServer;
-class ITcpReceiver;
+class ITcpClient;
 class IUdpReceiver;
 
 class IXNet
@@ -14,8 +14,7 @@ public:
     virtual ~IXNet() = default;
 
     virtual bool registerTcpServer(shared_ptr<ITcpServer>) = 0;
-    virtual bool registerTcpClient(shared_ptr<ITcpReceiver>) = 0;
-    virtual bool registerUdp(shared_ptr<IUdpReceiver>) = 0;
+    virtual bool registerTcpClient(shared_ptr<ITcpClient>) = 0;
 
     virtual bool setBindAddr(const string &) = 0;
 

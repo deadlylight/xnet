@@ -9,22 +9,22 @@ using namespace std;
 class IMux;
 class IDispatcher;
 
-class CXNetImpl : public IXNet
+class CXNet : public IXNet
 {
 private:
     shared_ptr<IMux> mMux;
     shared_ptr<IDispatcher> mDispatcher;
+    string mBindAddr;
 
     bool startMux(const string &);
     bool startDispatcher(uint32_t);
 
 public:
-    CXNetImpl();
-    ~CXNetImpl();
+    CXNet();
+    ~CXNet();
 
     bool registerTcpServer(shared_ptr<ITcpServer>) override;
-    bool registerTcpClient(shared_ptr<ITcpReceiver>) override;
-    bool registerUdp(shared_ptr<IUdpReceiver>) override;
+    bool registerTcpClient(shared_ptr<ITcpClient>) override;
 
     bool setBindAddr(const string &) override;
 

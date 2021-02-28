@@ -1,7 +1,7 @@
 #include <cxnetfactory.hpp>
-#include "cxnetimpl.hpp"
+#include "cxnet.hpp"
 
 shared_ptr<IXNet> CXNetFactory::createXNet()
 {
-    return make_shared<CXNetImpl>();
+    return make_shared<CXNet>();
 }

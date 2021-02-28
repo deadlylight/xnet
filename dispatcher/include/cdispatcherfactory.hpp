@@ -1,5 +1,4 @@
 #pragma once
-#include <cstdint>
 #include <memory>
 
 using namespace std;
@@ -10,5 +9,5 @@ class CDispatcherFactory
 {
 public:
     CDispatcherFactory() = delete;
-    static shared_ptr<IDispatcher> createDispatcher(uint32_t);
+    static shared_ptr<IDispatcher> createDispatcher(unsigned int);
 };
